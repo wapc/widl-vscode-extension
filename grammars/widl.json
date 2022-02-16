@@ -10,6 +10,7 @@
         { "include": "#widl-description-docstring" },
         { "include": "#widl-description-singleline" },
         { "include": "#widl-namespace-definition" },
+        { "include": "#widl-alias-definition" },
         { "include": "#widl-import-definition" },
         { "include": "#widl-directive-definition" },
         { "include": "#widl-type-interface" },
@@ -32,6 +33,15 @@
         { "include": "#widl-comment" },
         { "include": "#literal-quasi-embedded" }
       ]
+    },
+    "widl-alias-definition": {
+      "name": "meta.alias.widl",
+      "match": "\\s*(alias)\\s*([_A-Za-z][_0-9A-Za-z]*)\\s*=\\s*([_A-Za-z][_0-9A-Za-z]*)",
+      "captures": {
+        "1": { "name": "keyword.alias.widl" },
+        "2": { "name": "support.type.widl" },
+        "3": { "name": "support.type.widl" }
+      }
     },
     "widl-import-definition": {
       "begin": "\\s*(\\bimport\\b)\\s(\\*)?",
@@ -56,11 +66,11 @@
             { "include": "#widl-description-docstring" },
             { "include": "#widl-description-singleline" },
             {
-              "match": "\\s*([A-Za-z][_0-9A-Za-z]*)(\\sas\\s([A-Za-z][_0-9A-Za-z]*))?",
+              "match": "\\s*([A-Za-z][_0-9A-Za-z]*)\\s*((as)\\s*([A-Za-z][_0-9A-Za-z]*))?",
               "captures": {
                 "1": { "name": "support.type.widl" },
-                "2": { "name": "keyword.as.widl" },
-                "3": { "name": "support.type.widl" }
+                "3": { "name": "keyword.control.as.widl" },
+                "4": { "name": "support.type.widl" }
               }
             },
             { "include": "#literal-quasi-embedded" }
@@ -616,6 +626,13 @@
           "match": "(\\s*=)"
         },
         { "include": "#widl-float-value" },
+        { "include": "#widl-string-value" },
+        {
+          "match": "(\\s*as\\s)",
+          "captures": {
+            "1": { "name": "keyword.control.as.widl" }
+          }
+        },
         { "include": "#widl-string-value" },
         { "include": "#widl-directive" },
         { "include": "#literal-quasi-embedded" },
