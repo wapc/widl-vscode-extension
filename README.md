@@ -23,4 +23,3 @@ This Language Server works for plain text file. It has the following language fe
 
 - Run `vsce package` to generate `widl-vscode-extension-{semver}.vsix`.
 - Install the `.vsix` file in VS Code using the `Install from VSIX...` option under the `Extensions` view (three dots dropdown).
-- Currently, `vsce` is not including the modules it should in `node_modules`. In a terminal, go to `~/.vscode/extensions/wapc.widl-vscode-extension-{semver}}` and run `npm install`. Then restart VS Code and the language server should start successfully. We are working to resolve this.
