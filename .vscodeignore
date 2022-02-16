@@ -2,6 +2,8 @@
 **/*.ts
 **/*.map
 .gitignore
+.eslint*
+**/testFixture/**
 **/tsconfig.json
 **/tsconfig.base.json
 contributing.md
@@ -9,3 +11,5 @@ contributing.md
 node_modules/**
 client/node_modules/**
 server/node_modules/**
+scripts/**
+
