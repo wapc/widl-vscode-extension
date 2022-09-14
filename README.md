@@ -1,5 +1,11 @@
 # WIDL VS Code extension
 
+## Deprecation Notice
+
+**The WIDL project has been extracted out of waPC and can now be found at [github.com/apexlang](https://github.com/apexlang)**
+
+## Description
+
 Preview for editing waPC Interface Defintion Language (WIDL) documents inside VS Code.  
 
 ## Functionality
